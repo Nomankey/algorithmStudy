@@ -27,12 +27,11 @@ class HashTable {
     setItem = (key, value) => {
         this.numItems++;
         const loadTracker = this.numItems / this.table.length;
-        if (loadTracker > .8) {
-            this.resize();
-        }
+        if (loadTracker > .8) {this.resize();}
         const index = hashStringToInt(key, this.table.length);
         this.table[index]? this.table[index].push([key, value]) : this.table[index] = [[key, value]];
     };
+
     getItem = key => {
         const index = hashStringToInt(key, this.table.length);
         return !this.table[index]? null : this.table[index].find(x => x[0] === key)[1];
