@@ -11,7 +11,7 @@ const commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]];
 
 
 
-function solution(array, commands) {
+function solution1(array, commands) {
     let answer = [];
     for(let i = 0; i < commands.length; i++) {
         let arr = array.slice(commands[i][0]-1, commands[i][1]);
@@ -21,4 +21,15 @@ function solution(array, commands) {
     return answer
 }
 
-solution(array, commands);
+function solution2(array, commands) {
+    let answer = [];
+    commands.forEach(command => {
+        let arr = array.slice(command[0]-1, command[1]);
+        arr.sort((a, b) => a-b);
+        answer.push(arr[command[2]-1])        
+    });
+    return answer
+}
+
+console.log("solution1: ",solution1(array, commands));
+console.log("solution2: ",solution2(array, commands));
