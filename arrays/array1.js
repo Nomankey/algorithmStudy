@@ -1,3 +1,4 @@
+//https://programmers.co.kr/learn/courses/30/lessons/42748?language=javascript
 //get the number k when the array is sliced from i to j and sorted.
 //for example if the array is [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3
 //when the array is sliced from i to k it's [5, 2, 6, 3]

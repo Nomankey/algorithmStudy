@@ -1,3 +1,4 @@
+//https://programmers.co.kr/learn/courses/30/lessons/42746
 //0 or a positive integer is given
 // make the biggest integer you can by combining numbers in the array
 // for example in an array [6, 10, 2] the biggest number is 6102
