@@ -1,16 +1,16 @@
-function hashStringToInt(string, tableSize) {
+const hashStringToInt = (string, tableSize) => {
     let hash = 17;
   
     for (let i = 0; i < string.length; i++) {
-      hash = 13 * string.charCodeAt(i) % tableSize;
+      hash = (13 * hash * string.charCodeAt(i)) % tableSize;
     }
   
     return hash;
-  }
+};
 
-class HashTable{
+class HashTable {
 
-    table = new Array(3333);
+    table = new Array(3);
     numItems = 0;
 
     resize = () => {
