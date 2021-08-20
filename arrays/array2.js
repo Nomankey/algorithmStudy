@@ -9,7 +9,7 @@ const numbers = [3, 30, 34, 5, 9];
 
 function solution(numbers) {
     var answer = numbers.map(number => String(number)).sort((a, b) => b+a - (a+b)).join("");
-    return answer[0] === "0"? "0":answer
+    return answer[0] === "0" ? "0" : answer
 }
 
 //changed ever numbers in to strings and if the string which is connected is bigger than the string is connected in reverse the order remains
