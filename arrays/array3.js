@@ -5,14 +5,11 @@
 const citations = [3, 0, 6, 1, 5];
 
 function solution(citations) {
-    let hIndex = 0;
-
     citations.sort((a, b) => b - a);
-
-    for(let i = 0; i < citations.length; i++) {
-       if(i < citations[i]) hIndex += 1  
+    
+    for(let hIndex = 0; hIndex < citations.length; hIndex++) {
+       if(hIndex >= citations[hIndex]) return hIndex 
     }
-    return hIndex
 }
 
 console.log(solution([47, 42, 32, 28, 24, 22, 17, 15, 10, 10, 8]));//output: 10
