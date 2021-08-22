@@ -27,7 +27,7 @@ class HashTable {
     setItem = (key, value) => {
         this.numItems++;
         const loadTracker = this.numItems / this.table.length;
-        if (loadTracker > .8) {this.resize();}
+        if (loadTracker > .8) this.resize();
         const index = hashStringToInt(key, this.table.length);
         this.table[index]? this.table[index].push([key, value]) : this.table[index] = [[key, value]];
     };
