@@ -12,6 +12,8 @@ function solution(citations) {
     }
     return hIndex
 }
+const citations = [47, 42, 32, 28, 24, 22, 17, 15, 10, 10, 8];
+
 
 console.log(solution([47, 42, 32, 28, 24, 22, 17, 15, 10, 10, 8]));//output: 10
 console.log(solution([3, 0, 6, 1, 5]));//output:3

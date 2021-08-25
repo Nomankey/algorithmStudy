@@ -12,6 +12,19 @@ class HashTable {
 
     table = new Array(3);
     numItems = 0;
+    
+    setItem = (key, value) => {
+        this.numItems++;
+        const loadTracker = this.numItems / this.table.length;
+        if (loadTracker > .8) this.resize();
+        const index = hashStringToInt(key, this.table.length);
+        this.table[index]? this.table[index].push([key, value]) : this.table[index] = [[key, value]];
+    };
+    
+    getItem = key => {
+        const index = hashStringToInt(key, this.table.length);
+        return !this.table[index]? null : this.table[index].find(x => x[0] === key)[1];
+    }; 
 
     resize = () => {
         const newTable = new Array(this.table.length * 2);
@@ -23,19 +36,6 @@ class HashTable {
         });
         this.table = newTable;
     };
-
-    setItem = (key, value) => {
-        this.numItems++;
-        const loadTracker = this.numItems / this.table.length;
-        if (loadTracker > .8) this.resize();
-        const index = hashStringToInt(key, this.table.length);
-        this.table[index]? this.table[index].push([key, value]) : this.table[index] = [[key, value]];
-    };
-
-    getItem = key => {
-        const index = hashStringToInt(key, this.table.length);
-        return !this.table[index]? null : this.table[index].find(x => x[0] === key)[1];
-    }; 
 }
 
 const myTable = new HashTable();
